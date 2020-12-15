@@ -1,0 +1,23 @@
+[tabsintitlebar]:root .tab-label:-moz-window-inactive {
+	opacity:1 !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  min-width: 10px !important;
+}
+
+.tabbrowser-tab:not([selected]):not([pinned]) {
+  min-width: 10px !important;
+}
+
+.tabbrowser-tab[selected="true"]:not([pinned]) {
+  min-width: 10px !important;
+}
+
+.tab-icon-image{ opacity: 1 !important }
+
+.titlebar-spacer[type="pre-tabs"]{ display: none !important }
+
+.tab-label-container[textoverflow]:not([pinned]) {
+  mask-image: unset !important;
+}

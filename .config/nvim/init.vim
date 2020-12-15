@@ -1,3 +1,5 @@
+" Fish doesn't play all that well with others
+set shell=/bin/bash
 let mapleader = "\<Space>"
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -7,11 +9,63 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'chriskempson/base16-vim'
 call plug#end()
 
+" Editor settings
+filetype plugin indent on
+set autoindent
+set timeoutlen=300
+set encoding=utf-8
+set noshowmode
+set hidden
+set nowrap
+set nojoinspaces
+
+" Search results centered
+noremap <silent> n nzz
+noremap <silent> N Nzz
+noremap <silent> * *zz
+noremap <silent> # #zz
+noremap <silent> g* g*zz
+
+" Sane splits
+set splitright
+set splitbelow
+
+" Permanent undo
+set undodir=~/.vimdid
+set undofile
+
+"Editor settings
+set guioptions-=T
+set vb t_vb= 
+set backspace=2
+set nofoldenable
+set ttyfast
+set synmaxcol=500
+set laststatus=2
+set number
+set relativenumber
+set colorcolumn=80
+set showcmd
+set mouse=a
+set shortmess+=c
+
+" Colors
+set background=dark
+set termguicolors
+let base16colorspace=256
+colorscheme base16-gruvbox-dark-hard
+syntax on
+hi Normal ctermbg=NONE
+
+" Keybindings
 nmap <leader>w :w<CR>
+
 " ; as :
 nnoremap ; :
 
+" Delete without yank
 vnoremap <leader>p "_dP
+
 " Ctrl+j and Ctrl+k as Esc
 " Ctrl-j is a little awkward unfortunately:
 " https://github.com/neovim/neovim/issues/5916
@@ -45,12 +99,3 @@ map L $
 
 nnoremap j gj
 nnoremap k gk
-
-set background=dark
-set number
-set relativenumber
-set termguicolors
-let base16colorspace=256
-colorscheme base16-gruvbox-dark-hard
-syntax on
-hi Normal ctermbg=NONE
