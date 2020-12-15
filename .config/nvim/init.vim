@@ -44,7 +44,6 @@ set synmaxcol=500
 set laststatus=2
 set number
 set relativenumber
-set colorcolumn=80
 set showcmd
 set mouse=a
 set shortmess+=c
